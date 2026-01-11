@@ -1,0 +1,41 @@
+% preamble
+\documentclass[12pt, a4paper, onehalfspacing]{article}
+
+%luisa wendel diss, begründungnaus bgh urteil
+% rowa, paper
+
+
+% input; outsourcing of code to structure the main.tex
+\input{localpackages.tex}
+\input{localcommands.tex}
+\input{localhyphenation}
+\input{title}
+\graphicspath{{figures/}}
+\bibliography{localbibliography}
+
+% beginning of main document 
+\begin{document}
+\maketitle
+\thispagestyle{empty} % Makes the title page free of headers/footers
+
+\newpage
+\thispagestyle{empty} % Ensures the page after the title page is also empty (if desired)
+
+\tableofcontents % Generates the table of contents
+\clearpage        % Ensures any pending content is flushed, starting a new page
+%\thispagestyle{empty} % M
+% includings
+% das prozentzeichen kommentiert zeilen aus, die nicht kompiliert werden sollen
+\include{content/00-abstract}
+\input{content/01-intro}
+\input{content/02}
+\input{content/03}
+\input{content/04}
+\input{content/05-discussion}
+\input{content/06-conclusion}
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Literatur}
+\printbibliography\onehalfspacing
+\include{content/Eigenstaendigkeitserklaerung}
+\end{document}
